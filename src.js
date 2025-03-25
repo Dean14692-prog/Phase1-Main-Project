@@ -1,31 +1,30 @@
-// Find the button with the class .btnn and store it in addBtnn
-const addBtnn = document.querySelector(".btnn");
+function addNote() {
+  // Step 1: Get the note input value
+  const noteInput = document.getElementById("noteInput");
+  const noteText = noteInput.value.trim();
 
-// Add Click Event Listener on the addBtnn
-addBtnn.addEventListener("click", whenClicked);
+  // Step 2: Check if the input is empty
+  if (noteText === "") {
+    alert("Please enter a note!");
+    return;
+  }
 
-// Function to run when the button is clicked
-function whenClicked() {
-  let inputField = document.querySelector(".inputText");
+  // Step 3: Create a new note object
+  const newNote = { text: noteText };
 
-  // Get the input value and store it in noteText
-  let noteText = inputField.value.trim();
-
-  // Prevent adding empty notes
-  if (noteText === "") return;
-
-  // Create a new div for the note
-  let note = document.createElement("div");
-
-  // Add a class to the new div so it can be styled in CSS
-  note.className = "note";
-
-  // Set the text content of the new note
-  note.innerText = noteText;
-
-  // Append the new note inside the .note-card container
-  document.querySelector(".card").appendChild(note);
-
-  // Clear the input field after adding the note
-  inputField.value = "";
+  // Step 4: Send the note to db.json
+  fetch("http://localhost:3000/notes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newNote),
+  })
+    .then((response) => response.json())
+    .then((savedNote) => {
+      // Step 5: Add note to the UI
+      displayNote(savedNote);
+      noteInput.value = ""; // Clear input field
+    })
+    .catch((error) => console.error("Error adding note:", error));
 }
