@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   addButton.addEventListener("click", addNote);
 });
 
-// Function to add a new note
+// Function to add/POST a new note in the database
 async function addNote() {
   const noteInput = document.querySelector(".inputText");
   const noteText = noteInput.value.trim();
@@ -30,10 +30,6 @@ async function addNote() {
       },
       body: dataJson,
     });
-
-    const savedNote = await response.json();
-    displayNote(savedNote);
-    noteInput.value = ""; // Clear input field
   } catch (error) {
     console.error("Error adding note:", error);
   }
@@ -41,30 +37,34 @@ async function addNote() {
 
 // Function to fetch and display notes from db.json
 async function loadNotes() {
+  const getUrl = "http://localhost:3000/notes";
   try {
-    //Fetch data from a database.
-    const response = await fetch("http://localhost:3000/notes");
-    //Extract the JSON data from the response after making a fetch() request.
+    // Send a GET request to the specified URL.
+    const response = await fetch(getUrl);
+    // Wait for the response and then convert it from JSON text into a JavaScript object.
     const notes = await response.json();
-    // Display all notes
+    // For each note in the notes array, call the displayNote function to show it.
     notes.forEach(displayNote);
   } catch (error) {
+    // If something goes wrong, log the error to the console.
     console.error("Error loading notes:", error);
   }
 }
 
 // Function to display a note on the UI
-function displayNote(note) {
+function displayNote(card) {
   const cardContainer = document.querySelector(".card");
-
   // Create a new div for the note
   const noteDiv = document.createElement("div");
   noteDiv.classList.add("note");
-  noteDiv.textContent = note.text;
+
+  // Set the text inside the new <div> to be the value of 'card.text'.
+  // This means that whatever text is stored in 'card.text' will appear in this element.
+  noteDiv.innerText = card.text;
 
   // Create a delete button
   const deleteButton = document.createElement("button");
-  deleteButton.textContent = "X";
+  deleteButton.textContent = "Dlt";
   deleteButton.classList.add("delete-btn");
 
   // Delete event
