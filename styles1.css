@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  
 }
 
 .main {
@@ -124,7 +123,6 @@ ul li a:hover {
   line-height: 30px;
 }
 
-
 .h1 {
   font-family: "Times New Roman";
   font-size: 30px;
@@ -201,41 +199,42 @@ span {
   letter-spacing: 1px;
 }
 
-.btnn{
-    width: 420px;
-    height: 40px;
-    background: #ff7200;
-    border: none;
-    margin-top: 30px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: white;
-    transition: 0.4s ease;
+.btnn {
+  width: 420px;
+  height: 40px;
+  background: #ff7200;
+  border: none;
+  margin-top: 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: 0.4s ease;
 }
 
-.btnn:hover{
-    background: white;
-    color: #ff7200;
+.btnn:hover {
+  background: white;
+  color: #ff7200;
 }
 
-.btnn a{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    
+.btnn a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
-.form .link{
-    font-family: Arial;
-    font-size: 17px;
-    padding-top: 20px;
-    text-align: center;
+.form .link {
+  font-family: Arial;
+  font-size: 17px;
+  padding-top: 20px;
+  text-align: center;
 }
 
 .notes {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping to new lines */
+  flex-direction: column; /* Stacks notes vertically */
+  gap: 5px;
   width: 500px;
   height: 500px;
   background: linear-gradient(
@@ -246,17 +245,21 @@ span {
   float: left;
   border-radius: 10px;
   padding: 25px;
-   position: absolute;
+  position: absolute;
   top: 20px;
   left: 700px;
+  box-sizing: border-box;
+  overflow: hidden; /* Ensures no overflow */
 }
 
- .note{
-    width: 20%;
-  height: 25%;
+.note {
+  width: 100%; /* Makes the note take full width of its parent */
+  height: auto;
+  min-height: 50px;
+  border: 1px solid #ff7200;
+  padding: 10px;
+  border-radius: 5px;
   background: transparent;
-  border-radius: 10px;
-  padding: 25px;
-  border: 1px #ff7200 solid;
+  text-align: center;
+  box-sizing: border-box; /* Prevents width issues due to padding */
 }
- 

@@ -24,7 +24,7 @@ function whenClicked() {
   // Create a new div for the note
   let note = document.createElement("div");
 
-  // Add a class to the new div
+  // Add a class to the new div so as to style it in the css file
   note.className = "note";
 
   // Set the text content of the new note
