@@ -1,10 +1,3 @@
-/**
- * let divForm = document.querySelector(".form");
-let inputText = document.querySelector(".input");
-// const addBtnn = document.querySelector(".btnn");
-let notesArea = document.querySelector(".notes");
-
-**/
 
 // Find the button with the class .btnn and store it in addBtnn
 const addBtnn = document.querySelector(".btnn");
