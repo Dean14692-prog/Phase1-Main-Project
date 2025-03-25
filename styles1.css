@@ -200,7 +200,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   width: 100%;
   height: 305px;
   background: linear-gradient(
@@ -211,34 +210,52 @@ footer {
   position: absolute;
   top: 500px;
   padding: 25px;
-  text-align: center;
+  overflow: hidden; /* Prevents extra content */
 }
 
 .note-card {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 20px;
   background: transparent;
   color: white;
-  padding: 15px;
-  width: auto;
+  width: 100%;
+  height: 100%;
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   font-size: 18px;
   font-weight: bold;
 }
 
+.card {
+  display: flex;
+  gap: 10px; 
+  height: 100%; /* Make it take up almost full height */
+  overflow: hidden; /* Hide overflowing content */
+  white-space: nowrap; /* Prevent wrapping */
+  position: relative;
+  background: transparent;
+}
+
 .note {
   width: 200px;
-  height: 95%;
+  height: 100%; /* Make it occupy the full height of .card */
   padding: 10px;
   border-radius: 5px;
-  background: transparent;
+  background: transparent; /* Light transparent background */
   font-size: 16px;
-  border: 1px solid #ff7200;
+  border: 2px solid #ff7200;
+  text-align: center;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0; /* Prevent shrinking */
 }
+
+
+
+
 
 .quote {
   margin-top: 5px;
