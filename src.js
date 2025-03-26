@@ -26,11 +26,12 @@ async function addNote() {
   const newNote = { topic: noteTopic, text: noteContent };
 
   try {
+    const jsonString = JSON.stringify(newNote);
     const url = "http://localhost:3000/notes";
     const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newNote), // converts 
+      body: jsonString, // converts the JavaScript object newNote into a JSON string
     });
 
     if (!response.ok) throw new Error("Failed to add note");
