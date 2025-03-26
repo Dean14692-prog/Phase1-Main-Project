@@ -191,8 +191,8 @@ span {
   color: white;
 }
 
-.contentText{
-    width: 650px;
+.contentText {
+  width: 650px;
   height: 150px;
   background: white;
   border: none;
@@ -222,7 +222,7 @@ footer {
   position: absolute;
   top: 500px;
   padding: 25px;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .note-card {
@@ -240,14 +240,13 @@ footer {
 
 .card {
   display: flex;
-  gap: 10px; 
+  gap: 10px;
   height: 90%; /* Make it take up almost full height */
   overflow: hidden; /* Hide overflowing content */
   white-space: nowrap; /* Prevent wrapping */
   position: relative;
   background: transparent;
 }
-
 
 .quote {
   margin-top: 5px;
@@ -273,7 +272,7 @@ footer {
   justify-content: center; /* Centers content vertically */
   height: 230px; /* Adjust as needed */
   width: 150px; /* Adjust as needed */
-    background: transparent;
+  background: transparent;
   border-bottom: 1px solid #ff7200;
   border-right: none;
   border-left: none;
@@ -281,7 +280,6 @@ footer {
   border-radius: 10px;
   padding: 10px;
   text-align: center;
-  
 }
 
 .button {
@@ -292,16 +290,54 @@ footer {
   font-size: 18px;
   border-radius: 10px;
   cursor: pointer;
-  color: white;  
+  color: white;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Centers the button */
 }
 
-
 .button:hover {
   background: white;
   color: #ff7200;
 }
 
+.delete-btn {
+  width: 100px;
+  height: 40px;
+  background: #ff7200;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the button */
+}
+
+.delete-btn:hover {
+  background: white;
+  color: #ff7200;
+}
+
+.viewMe-btn {
+  width: 100px;
+  height: 40px;
+  background: #ff7200;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the button */
+}
+
+.viewMe-btn:hover {
+  background: white;
+  color: #ff7200;
+}

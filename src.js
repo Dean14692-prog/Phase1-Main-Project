@@ -63,21 +63,32 @@ async function loadNotes() {
 function displayNote(note) {
   const cardContainer = document.querySelector(".card");
 
-  // Create a new div for the note
+  // Create a new div for the topic of the note
   const noteDiv = document.createElement("div");
   noteDiv.classList.add("note");
-  noteDiv.innerText = `${note.topic} ${note.text}`;
+  noteDiv.innerText = `${note.topic}`;
 
   // Create a delete button
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
   deleteButton.classList.add("delete-btn");
 
+  // Create a new div for the content of the note
+  const noteArea = document.createElement("notesArea");
+  noteDiv.classList.add("noteArea");
+  noteDiv.innerText = `${note.text}`;
+
+  //Create View Me Button
+  const viewMeButton = document.createElement("button");
+  viewMeButton.textContent = "View Me";
+  viewMeButton.classList.add("viewMe-btn");
+
   // Delete event
   deleteButton.addEventListener("click", () => deleteNote(note.id, noteDiv));
 
   // Append delete button to the note div
   noteDiv.appendChild(deleteButton);
+  noteDiv.appendChild(viewMeButton);
 
   // Add the note to the card container
   cardContainer.appendChild(noteDiv);
