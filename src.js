@@ -21,10 +21,8 @@ async function addNote() {
     alert("Please enter both topic and content!");
     return;
   }
-
   // Create object where your notes will be created
   const newNote = { topic: noteTopic, text: noteContent };
-
   try {
     const jsonString = JSON.stringify(newNote);
     const url = "http://localhost:3000/notes";
@@ -36,10 +34,11 @@ async function addNote() {
 
     if (!response.ok) throw new Error("Failed to add note");
 
+    //Converts the JSON data into a JavaScript object.
     const savedNote = await response.json();
-    displayNote(savedNote); // Update UI immediately
-
-    // Clear input fields
+    // Display the newly saved note on the page.
+    displayNote(savedNote);
+    // Clear input fields once add button is clicked
     document.querySelector("#noteTopic").value = "";
     document.querySelector("#noteInput").value = "";
   } catch (error) {
