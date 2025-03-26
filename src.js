@@ -30,7 +30,7 @@ async function addNote() {
     const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newNote),
+      body: JSON.stringify(newNote), // converts 
     });
 
     if (!response.ok) throw new Error("Failed to add note");
