@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Load existing notes when the page loads
   loadNotes();
-  // Select the "Add" button and attach an event listener
+  // Select the Add button and attach an event listener
   const addButton = document.querySelector("#addNoteButton");
   addButton.addEventListener("click", addNote);
 });
 
 // Function to add/POST a new note in the database
 async function addNote() {
-  // Get the topic input element and its trimmed value
+  // Get the topic input element
   const noteTopicElement = document.querySelector("#noteTopic");
   const noteTopic = noteTopicElement.value.trim();
 
-  // Get the content input element and its trimmed value
+  // Get the content input element
   const noteInputElement = document.querySelector("#noteInput");
   const noteContent = noteInputElement.value.trim(); // Remove the spaces before or after the text.
 
@@ -65,7 +65,8 @@ function displayNote(note) {
   // Create a new div for the topic of the note
   const noteDiv = document.createElement("div");
   noteDiv.classList.add("note");
-  noteDiv.innerText = `${note.topic}`;
+ // noteDiv.innerText = `${note.topic}`;
+ noteDiv.innerText = note.topic;
 
   // Create a delete button
   const deleteButton = document.createElement("button");
@@ -75,11 +76,12 @@ function displayNote(note) {
   // Create a new div for the content of the note
   const noteArea = document.createElement("notesArea");
   noteDiv.classList.add("noteArea");
-  noteDiv.innerText = `${note.text}`;
+  //noteDiv.innerText = `${note.text}`;
+  noteDiv.innerText = note.text;
 
   //Create View Me Button
   const viewMeButton = document.createElement("button");
-  viewMeButton.textContent = "View Me";
+  viewMeButton.textContent = note.topic;
   viewMeButton.classList.add("viewMe-btn");
 
   // Add Event on the viewMe btn
