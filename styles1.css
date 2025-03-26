@@ -183,11 +183,22 @@ span {
   height: 40px;
   background: #ff7200;
   border: none;
-  margin-top: 30px;
+  margin-bottom: 2px;
   font-size: 18px;
   border-radius: 10px;
   cursor: pointer;
   color: white;
+}
+
+.contentText{
+    width: 650px;
+  height: 150px;
+  background: white;
+  border: none;
+  margin-top: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: #ff7200;
   transition: 0.4s ease;
 }
 
@@ -210,7 +221,7 @@ footer {
   position: absolute;
   top: 500px;
   padding: 25px;
-  overflow: hidden; /* Prevents extra content */
+  overflow: hidden; 
 }
 
 .note-card {
@@ -229,32 +240,12 @@ footer {
 .card {
   display: flex;
   gap: 10px; 
-  height: 100%; /* Make it take up almost full height */
+  height: 90%; /* Make it take up almost full height */
   overflow: hidden; /* Hide overflowing content */
   white-space: nowrap; /* Prevent wrapping */
   position: relative;
   background: transparent;
 }
-
-.note {
-  width: 200px;
-  height: 100%; /* Make it occupy the full height of .card */
-  padding: 10px;
-  border-radius: 5px;
-  background: transparent; /* Light transparent background */
-  font-size: 16px;
-  border: 2px solid #ff7200;
-  text-align: center;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  flex-shrink: 0; /* Prevent shrinking */
-}
-
-
-
 
 
 .quote {
@@ -272,3 +263,45 @@ footer {
   width: 700px; /* Ensure it spans the full width */
   padding-left: 20px; /* Add some padding if needed */
 }
+/* Created on the js */
+.note {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically */
+  height: 230px; /* Adjust as needed */
+  width: 150px; /* Adjust as needed */
+    background: transparent;
+  border-bottom: 1px solid #ff7200;
+  border-right: none;
+  border-left: none;
+  border-top: 1px solid #ff7200;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  
+}
+
+.button {
+  width: 100px;
+  height: 40px;
+  background: #ff7200;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the button */
+}
+
+
+.button:hover {
+  background: white;
+  color: #ff7200;
+}
+

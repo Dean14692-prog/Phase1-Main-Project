@@ -1,76 +1,73 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Load existing notes when the page loads
+  //Calling the function to get data form db.json
   loadNotes();
 
   // Select the "Add" button and attach an event listener
-  const addButton = document.querySelector("#addNoteButton");
+  const addButton = document.querySelector(".btnn");
   addButton.addEventListener("click", addNote);
 });
 
 // Function to add/POST a new note in the database
 async function addNote() {
-  const noteTopic = document.querySelector("#noteTopic").value.trim();
-  const noteContent = document.querySelector("#noteInput").value.trim();
+  const noteInput = document.querySelector(".inputText");
+  const noteText = noteInput.value.trim();
 
-  if (noteTopic === "" || noteContent === "") {
-    alert("Please enter both topic and content!");
+  if (noteText === "") {
+    alert("Please enter a note!");
     return;
   }
-
-  // Create object where your notes will be created
-  const newNote = { topic: noteTopic, text: noteContent };
+  //create object where your notes will be created
+  const newNote = { text: noteText };
 
   try {
     const url = "http://localhost:3000/notes";
+    const dataJson = JSON.stringify(newNote);
     const response = await fetch(url, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newNote),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: dataJson,
     });
-
-    if (!response.ok) throw new Error("Failed to add note");
-
-    const savedNote = await response.json();
-    displayNote(savedNote); // Update UI immediately
-
-    // Clear input fields
-    document.querySelector("#noteTopic").value = "";
-    document.querySelector("#noteInput").value = "";
   } catch (error) {
     console.error("Error adding note:", error);
   }
 }
 
+
+
+
 // Function to fetch and display notes from db.json
 async function loadNotes() {
-  const url = "http://localhost:3000/notes";
+  const getUrl = "http://localhost:3000/notes";
   try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error("Failed to fetch notes");
-
+    // Send a GET request to the specified URL.
+    const response = await fetch(getUrl);
+    // Wait for the response and then convert it from JSON text into a JavaScript object.
     const notes = await response.json();
-
-    const cardContainer = document.querySelector(".card");
-    cardContainer.innerHTML = ""; // Clear existing notes before loading new ones
-
+    // For each note in the notes array, call the displayNote function to show it.
     notes.forEach(displayNote);
   } catch (error) {
+    // If something goes wrong, log the error to the console.
     console.error("Error loading notes:", error);
   }
 }
 
 // Function to display a note on the UI
-function displayNote(note) {
+function displayNote(card) {
   const cardContainer = document.querySelector(".card");
-
   // Create a new div for the note
   const noteDiv = document.createElement("div");
   noteDiv.classList.add("note");
-  noteDiv.innerHTML = `<h3>${note.topic}</h3><p>${note.text}</p>`;
+
+  // Set the text inside the new <div> to be the value of 'card.text'.
+  // This means that whatever text is stored in 'card.text' will appear in this element.
+  noteDiv.innerText = card.text;
 
   // Create a delete button
   const deleteButton = document.createElement("button");
-  deleteButton.textContent = "Delete";
+  deleteButton.textContent = "Dlt";
   deleteButton.classList.add("delete-btn");
 
   // Delete event
@@ -90,7 +87,9 @@ async function deleteNote(id, noteElement) {
       method: "DELETE",
     });
 
-    if (!response.ok) throw new Error("Failed to delete note");
+    if (!response.ok) {
+      throw new Error("Failed to delete note");
+    }
 
     // Remove the note from the UI
     noteElement.remove();
