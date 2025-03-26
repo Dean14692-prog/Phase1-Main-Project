@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
   addButton.addEventListener("click", addNote);
 });
 
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    addNote();
+  }
+});
+
 // Function to add/POST a new note in the database
 async function addNote() {
   // Get the topic input element
