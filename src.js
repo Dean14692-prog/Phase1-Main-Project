@@ -9,8 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Function to add/POST a new note in the database
 async function addNote() {
-  const noteTopic = document.querySelector("#noteTopic").value.trim();
-  const noteContent = document.querySelector("#noteInput").value.trim();
+  // Get the topic input element and its trimmed value
+  const noteTopicElement = document.querySelector("#noteTopic");
+  const noteTopic = noteTopicElement.value.trim();
+
+  // Get the content input element and its trimmed value
+  const noteInputElement = document.querySelector("#noteInput");
+  const noteContent = noteInputElement.value.trim();
 
   if (noteTopic === "" || noteContent === "") {
     alert("Please enter both topic and content!");
@@ -66,7 +71,7 @@ function displayNote(note) {
   // Create a new div for the note
   const noteDiv = document.createElement("div");
   noteDiv.classList.add("note");
-  noteDiv.innerHTML = `<h3>${note.topic}</h3><p>${note.text}</p>`;
+  noteDiv.innerText = `${note.topic} ${note.text}`;
 
   // Create a delete button
   const deleteButton = document.createElement("button");
