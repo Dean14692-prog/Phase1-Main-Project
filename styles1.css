@@ -167,6 +167,7 @@ span {
   height: 35px;
   background: transparent;
   border-bottom: 1px solid #ff7200;
+  border-radius: 10px;
   border-right: none;
   border-left: none;
   border-top: none;
@@ -291,8 +292,7 @@ footer {
   font-size: 18px;
   border-radius: 10px;
   cursor: pointer;
-  color: white;
-  
+  color: white;  
   position: absolute;
   top: 50%;
   left: 50%;

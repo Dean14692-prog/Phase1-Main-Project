@@ -15,8 +15,9 @@ async function addNote() {
 
   // Get the content input element and its trimmed value
   const noteInputElement = document.querySelector("#noteInput");
-  const noteContent = noteInputElement.value.trim();
+  const noteContent = noteInputElement.value.trim(); // Remove the spaces before or after the text.
 
+  //Condition to ensure we do not save an empty note
   if (noteTopic === "" || noteContent === "") {
     alert("Please enter both topic and content!");
     return;
