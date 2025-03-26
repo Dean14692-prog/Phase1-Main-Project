@@ -32,9 +32,6 @@ async function addNote() {
       headers: { "Content-Type": "application/json" },
       body: jsonString, // converts the JavaScript object newNote into a JSON string
     });
-
-    if (!response.ok) throw new Error("Failed to add note");
-
     //Converts the JSON data into a JavaScript object.
     const savedNote = await response.json();
     // Clear input fields once add button is clicked
