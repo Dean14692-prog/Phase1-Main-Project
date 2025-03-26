@@ -22,8 +22,8 @@
   height: 75px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Ensures content spreads properly */
-  padding: 0 20px; /* Add padding for better spacing */
+  justify-content: space-between;
+  padding: 0 20px;
   border-bottom: #ff7200 solid 2px;
 }
 
@@ -241,9 +241,9 @@ footer {
 .card {
   display: flex;
   gap: 10px;
-  height: 90%; /* Make it take up almost full height */
-  overflow: hidden; /* Hide overflowing content */
-  white-space: nowrap; /* Prevent wrapping */
+  height: 90%;
+  overflow: hidden;
+  white-space: nowrap;
   position: relative;
   background: transparent;
 }
@@ -252,26 +252,28 @@ footer {
   margin-top: 5px;
   height: 350px;
   border-radius: 10px;
+  border-bottom: #ff7200 solid 2px;
+  box-shadow: 10px;
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.5) 50%,
     rgba(0, 0, 0, 0.5) 50%
   );
   position: absolute;
-  text-align: left; /* Align text to the left */
-  left: 700px; /* Move the div to the left margin */
-  width: 700px; /* Ensure it spans the full width */
-  padding-left: 20px; /* Add some padding if needed */
+  text-align: left;
+  left: 700px;
+  width: 700px;
+  padding-left: 20px;
 }
-/* Created on the js */
+
 .note {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers content horizontally */
-  justify-content: center; /* Centers content vertically */
-  height: 230px; /* Adjust as needed */
-  width: 150px; /* Adjust as needed */
+  align-items: center;
+  justify-content: center;
+  height: 230px;
+  width: 150px;
   background: transparent;
   border-bottom: 1px solid #ff7200;
   border-right: none;
@@ -294,7 +296,7 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the button */
+  transform: translate(-50%, -50%);
 }
 
 .button:hover {
@@ -314,7 +316,7 @@ footer {
   position: absolute;
   top: 90%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the button */
+  transform: translate(-50%, -50%);
 }
 
 .delete-btn:hover {
@@ -334,10 +336,31 @@ footer {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the button */
+  transform: translate(-50%, -50%);
 }
 
 .viewMe-btn:hover {
+  background: white;
+  color: #ff7200;
+}
+
+.edit-btn{
+  width: 100px;
+  height: 40px;
+  background: #ff7200;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.edit-btn:hover {
   background: white;
   color: #ff7200;
 }

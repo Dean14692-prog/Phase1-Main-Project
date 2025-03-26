@@ -65,8 +65,8 @@ function displayNote(note) {
   // Create a new div for the topic of the note
   const noteDiv = document.createElement("div");
   noteDiv.classList.add("note");
- // noteDiv.innerText = `${note.topic}`;
- noteDiv.innerText = note.topic;
+  // noteDiv.innerText = `${note.topic}`;
+  noteDiv.innerText = note.topic;
 
   // Create a delete button
   const deleteButton = document.createElement("button");
@@ -76,12 +76,11 @@ function displayNote(note) {
   // Create a new div for the content of the note
   const noteArea = document.createElement("notesArea");
   noteDiv.classList.add("noteArea");
-  //noteDiv.innerText = `${note.text}`;
   noteDiv.innerText = note.text;
 
   //Create View Me Button
   const viewMeButton = document.createElement("button");
-  viewMeButton.textContent = note.topic;
+  viewMeButton.innerText = note.topic; // To display topic content on the button
   viewMeButton.classList.add("viewMe-btn");
 
   // Add Event on the viewMe btn
@@ -112,10 +111,20 @@ async function deleteNote(id, noteElement) {
     });
 
     if (!response.ok) throw new Error("Failed to delete note");
-
     // Remove the note from the UI
     noteElement.remove();
   } catch (error) {
     console.error("Error deleting note:", error);
   }
 }
+
+/* 
+const editButton = document.createElement("button");
+editButton.innerText = "Edit";
+editButton.classList.add("edit-btn");
+// When the Edit button is clicked, enable edit mode
+editButton.addEventListener("click", () =>
+  enableEdit(note, noteDiv, noteTextElement)
+);
+noteDiv.appendChild(editButton);
+*/
