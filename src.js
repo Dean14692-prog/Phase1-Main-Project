@@ -83,6 +83,15 @@ function displayNote(note) {
   viewMeButton.textContent = "View Me";
   viewMeButton.classList.add("viewMe-btn");
 
+  // Add Event on the viewMe btn
+  //viewMeButton.addEventListener("click", displayNote);
+
+  viewMeButton.addEventListener("click", () => {
+    const viewMeContent = document.querySelector(".quote h1"); // Select the correct element
+    viewMeContent.innerHTML = note.text; // Set the text content
+    viewMeContent.classList.add("cont");
+  });
+
   // Delete event
   deleteButton.addEventListener("click", () => deleteNote(note.id, noteDiv));
 
