@@ -37,8 +37,6 @@ async function addNote() {
 
     //Converts the JSON data into a JavaScript object.
     const savedNote = await response.json();
-    // Display the newly saved note on the page.
-    displayNote(savedNote);
     // Clear input fields once add button is clicked
     document.querySelector("#noteTopic").value = "";
     document.querySelector("#noteInput").value = "";
@@ -48,19 +46,18 @@ async function addNote() {
 }
 
 // Function to fetch and display notes from db.json
+//Performs GET Operation, retrieving data from the dB
 async function loadNotes() {
   const url = "http://localhost:3000/notes";
   try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error("Failed to fetch notes");
-
-    const notes = await response.json();
-
+    const response = await fetch(url); // Send GET request to the dB
+    const notes = await response.json(); // Converts the response to JS Object
     const cardContainer = document.querySelector(".card");
-    cardContainer.innerHTML = ""; // Clear existing notes before loading new ones
-
+    cardContainer.innerText = ""; // Clear existing notes before loading new ones
     notes.forEach(displayNote);
   } catch (error) {
+    //Prints "Error:" followed by the actual error message in the browser’s console.
+
     console.error("Error loading notes:", error);
   }
 }
