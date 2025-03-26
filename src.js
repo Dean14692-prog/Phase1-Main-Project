@@ -98,7 +98,7 @@ function displayNote(note) {
     viewMeContent.classList.add("cont");
   });
 
-  // Delete event
+  // Delete event,the note to be deleted from the database, and HTML element from the UI.
   deleteButton.addEventListener("click", () => deleteNote(note.id, noteDiv));
 
   // Append delete button to the note div
