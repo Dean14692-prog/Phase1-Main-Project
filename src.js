@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Load existing notes when the page loads
   loadNotes();
-
   // Select the "Add" button and attach an event listener
   const addButton = document.querySelector("#addNoteButton");
   addButton.addEventListener("click", addNote);
@@ -22,7 +21,7 @@ async function addNote() {
     alert("Please enter both topic and content!");
     return;
   }
-  // Create object where your notes will be created
+  // Create object where notes will be created
   const newNote = { topic: noteTopic, text: noteContent };
   try {
     const jsonString = JSON.stringify(newNote);
