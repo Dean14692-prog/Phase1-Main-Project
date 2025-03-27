@@ -34,8 +34,11 @@ npx json-server --watch db.json
 
 4. **Run the Code**
 
-   Open ```bash index.html
-``` in a browser or use Live Server in VS Code.
+Open the project
+```bash 
+   index.html
+``` 
+in a browser or use Live Server in VS Code.
 
 ## Usage
 
@@ -86,4 +89,4 @@ email: dennisngui07@gmail.com
 
 ## Project Link
 
-https://github.com/Dean14692-prog/JS-CODE-CHALLENG1/tree/main
+https://github.com/Dean14692-prog/Phase1-Main-Project
