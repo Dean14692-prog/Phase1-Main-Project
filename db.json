@@ -1,11 +1,6 @@
 {
   "notes": [
     {
-      "topic": "READ",
-      "text": "Dean",
-      "id": "1ee8"
-    },
-    {
       "id": "1053",
       "topic": "Dean",
       "text": "Get"
@@ -54,6 +49,11 @@
       "id": "8a28",
       "topic": "Call",
       "text": "as"
+    },
+    {
+      "id": "d816",
+      "topic": "READ",
+      "text": "Checkout"
     }
   ]
 }
