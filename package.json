@@ -1,0 +1,20 @@
+{
+  "name": "navigation-bar",
+  "version": "1.0.0",
+  "description": "This project is a note taking app that lets users add, view, and delete notes, storing them with json-server. It supports keyboard shortcuts and dynamic UI updates using HTML, CSS, and JavaScript.",
+  "main": "src.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dean14692-prog/Phase1-Main-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dean14692-prog/Phase1-Main-Project/issues"
+  },
+  "homepage": "https://github.com/Dean14692-prog/Phase1-Main-Project#readme"
+}
