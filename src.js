@@ -123,7 +123,6 @@ async function deleteNote(id, noteElement) {
     console.error("Error deleting note:", error);
   }
 }
-
 /* 
 const editButton = document.createElement("button");
 editButton.innerText = "Edit";
