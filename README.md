@@ -2,7 +2,7 @@
 This project is a note taking app that lets users add, view, and delete notes, storing them with json-server. It supports keyboard shortcuts and dynamic UI updates using HTML, CSS, and JavaScript.
 
 ## Features
-- **Add Notes** – Users can enter a topic and content for a note, which is then saved to a database (json-server).
+- **Add Notes** – Users can enter topic and content for a note, which is then saved to a database (json-server).
 
 - **View Notes** – All saved notes are displayed in a card-like format on the UI.
 
